@@ -18,7 +18,7 @@ export default class ShowScoreColor extends React.PureComponent{
             height:"4px",
             width:"60px",
             "border-radius":"30px",
-            'margin-left':'120px',
+            'margin-left':'50px',
 
         }
         return (
