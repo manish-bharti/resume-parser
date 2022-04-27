@@ -27,6 +27,7 @@ export default class MainComponent extends React.Component {
   render() {
     return (
       <>
+      <div className="home-button">&lt; <a href="http://127.0.0.1:5501/index.html#parser">Home</a></div>
         <h1 className="title"> Resume Analyzer</h1>
         <form onSubmit={this.handleSubmit} className="job-description">
           <label>Recruting field:</label>

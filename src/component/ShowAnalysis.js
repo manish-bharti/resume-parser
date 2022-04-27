@@ -9,6 +9,7 @@ export default class ShowAnalysis extends React.PureComponent {
     return (
       <>
         {candidateData.map((data) => {
+          console.log(data);
           return (
             <div className="analysis-container">
               <div>

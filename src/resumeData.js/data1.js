@@ -13,7 +13,7 @@ export const candidateData = [
       "html/css",
       "competetive programming",
       "javascript",
-      "Window",
+      "window",
       "linux",
       "mysql",
       "firebase",

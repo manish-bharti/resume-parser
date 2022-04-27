@@ -2,6 +2,22 @@ import React from "react";
 import "./resumePoints.scss";
 import ShowScoreColor from "./ShowScoreColor";
 export default class ResumePoints extends React.PureComponent {
+  getScore = (required, having) => {
+    let score = 0;
+    const { subfields: requiredSkills } = required;
+    const { keySkills: havingSkills } = having;
+    console.log(requiredSkills);
+    console.log(havingSkills);
+    for (let i = 0; i < requiredSkills.length; i++) {
+      for (let j = 0; j < havingSkills.length; j++) {
+        if (requiredSkills[i].value === havingSkills[j]) {
+          score++;
+        }
+      }
+    }
+    return score;
+  };
+
   render() {
     const { requiredFields, resumedata } = this.props;
     const scoreMatrix = {
@@ -21,7 +37,11 @@ export default class ResumePoints extends React.PureComponent {
     let fieldScore = requiredFields.field.value === resumedata.field ? 5 : 0;
     let experienceScore =
       5 + resumedata.experience - requiredFields.experience.value;
-      const totalScore=fieldScore===0?0:educationScore+fieldScore+experienceScore;
+    const totalScore =
+      fieldScore === 0 ? 0 : educationScore + fieldScore + experienceScore;
+
+    let subSkillScore = this.getScore(requiredFields, resumedata);
+    console.log(subSkillScore);
     // console.log(educationScore + " " + fieldScore + " " + experienceScore);
     return (
       <>
@@ -32,7 +52,7 @@ export default class ResumePoints extends React.PureComponent {
               height: "4px",
               background: "red",
               display: "inline-block",
-              marginRight:'10px',
+              marginRight: "10px",
             }}
           ></span>
           <span>Low</span>
@@ -44,7 +64,7 @@ export default class ResumePoints extends React.PureComponent {
               height: "4px",
               background: "orange",
               display: "inline-block",
-              marginRight:'10px',
+              marginRight: "10px",
             }}
           ></span>
           <span> Medium</span>
@@ -56,7 +76,7 @@ export default class ResumePoints extends React.PureComponent {
               height: "4px",
               background: "green",
               display: "inline-block",
-              marginRight:'10px',
+              marginRight: "10px",
             }}
           ></span>
           <span>High</span>
@@ -75,6 +95,10 @@ export default class ResumePoints extends React.PureComponent {
           <div className="title-graph-container">
             <div className="field">Field</div>
             <ShowScoreColor score={fieldScore} />
+          </div>
+          <div className="title-graph-container">
+            <div className="field">Skills</div>
+            <ShowScoreColor score={subSkillScore*2} />
           </div>
         </div>
       </>

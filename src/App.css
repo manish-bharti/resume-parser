@@ -29,3 +29,16 @@
 .title{
   text-align:center;
 }
+.home-button{
+  margin:30px;
+  padding:10px;
+  border:1px solid black;
+  border-radius: 12px;
+  display: inline-block;
+  background:blue;
+  color:white;
+}
+.home-button a{
+  color:white;
+  
+}
