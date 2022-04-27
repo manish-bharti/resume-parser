@@ -1,6 +1,4 @@
-.App {
-  text-align: center;
-}
+
 
 .App-logo {
   height: 40vmin;
@@ -19,4 +17,15 @@
 
 .App-link {
   color: #09d3ac;
+}
+.job-description{
+  margin:10px;
+
+  
+}
+.job-description input[type=submit]{
+  margin-top:12px;
+}
+.title{
+  text-align:center;
 }
