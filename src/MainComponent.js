@@ -143,6 +143,10 @@ const Subfields = (props) => {
     { value: "javascript", label: "Javscript" },
     { value: "frontend", label: "Frontend" },
     { value: "backend", label: "Backend" },
+    { value: "html", label: "HTML" },
+    { value: "css", label: "CSS" },
+    { value: "data structure", label: "Data Structure" },
+    { value: "css", label: "CSS" },
   ];
   const [selectedOption, setSelectedOption] = useState(null);
   const handleChangee = (selected) => {
