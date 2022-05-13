@@ -1,0 +1,369 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/css/bootstrap.min.css" integrity="sha384-TX8t27EcRE3e/ihU7zmQxVncDAy5uIKz4rEkgIXeMed4M0jlfIDPvg6uqKI2xXr2" crossorigin="anonymous">
+    <!-- <link rel="stylesheet" href="./css/style.css"> -->
+    
+    <style>
+        *{
+            padding: 0;
+            margin: 0;
+            box-sizing: border-box;
+        }
+
+        .personal-details,.head-section::after{
+            content: '';
+            width: 98%;
+            border-bottom: solid 3px black;
+            position: absolute;
+        }
+        .acadmic-section{
+            position: absolute;
+            top: 25%;
+            width: 100%;
+        }
+        .edu>li{
+            width: 100%;
+            
+            list-style: none;
+        }
+        .lang>li{
+            width: 100%;
+            
+            list-style: none;
+        }
+        .title{
+            font-size: 20px;
+            font-weight: 500;
+        }
+        .acadmic-section h3{
+            text-decoration: underline;
+        }
+        #temp{
+            display: none;
+        }
+        #cv-form{
+            /* display: none; */
+        }
+    </style>
+
+</head>
+<body>
+    <div class="container" id="cv-form">
+        <h1 class="text-center my-2" style="color: white;">CVIC</h1>
+        <p class="text-center" style="color: white;">Create your own resume</p>
+    
+        <!-- Grid 12 -->
+        <div class="row">
+    
+            
+                    <div class="col-md-6">
+                    <!-- 6 grid  column1 -->
+            
+                        <h3 style="color: white;">Personal Information</h3>
+                
+                        <div class="form-group mt-2">
+                            <label for="nameField">Your Name</label>
+                            <input type="text" class="form-control" id="nameField" placeholder="Enter here">
+                
+                        </div>
+                        <div class="form-group">
+                            <label for="emailField">Your Email</label>
+                            <input type="email" class="form-control" id="emailField" placeholder="Enter here">
+                
+                        </div>
+                        <div class="form-group mt-2">
+                            <label for="contactField">Contact No</label>
+                            <input type="number" class="form-control" id="contactField" placeholder="Enter here">
+                
+                        </div>
+                        <div class="form-group mt-2">
+                            <label for="addressField">Your Address</label>
+                            <textarea class="form-control mb-5" id="addressField" placeholder="Enter here"  ></textarea>
+                
+                        </div>
+                
+                
+                        <h4 class="my-3" style="color: white;">Social Links</h4>
+                
+                        <!-- github -->
+                    
+                        <div class="form-group">
+                
+                            <label for="gitField">Github</label>
+                            <i class="fa fa-github" aria-hidden="true" style="color: white"></i>
+                            <input type="text" class="form-control" id="gitField" placeholder="Enter here">
+                
+                        </div>
+                
+                        <!-- linkedin -->
+                        <!-- <div class="form-group my-2">     
+                                <label for="linkedinField">Linkedin </label>
+                                <i class="fa fa-linkedin" aria-hidden="true" style="background: #007bb5 ;padding: 5px;"></i>
+                            <input type="text" class="form-control" id="linkedinField" placeholder="Enter here">
+                
+                        </div> -->
+                
+                        <!-- portfolio -->
+<!--                 
+                        <div class="form-group my-2">
+                
+                                <label for="portfolioField">Portfolio </label>
+                                <i class="fa fa-rss" aria-hidden="true"></i>
+                            
+                            <input type="text" class="form-control" id="portfolioField" placeholder="Enter here">
+                
+                        </div> -->
+                
+                        <!-- Languages -->
+                    
+                        <h4 class="my-3 py-2" style="color: white;">Languages</h4>
+                    
+                        <!-- L1 -->
+                    
+                        <div class="form-group">
+                    
+                            <label for="NatLField">Native</label>
+                            <i class="fa fa-language" aria-hidden="true" style="color: white"></i>
+                            <input type="text" class="form-control" id="NatLField"" placeholder="Enter here">
+                    
+                        </div>
+                
+                        <!-- professional -->
+                        <div class="form-group">
+                    
+                            <label for="proLField">Professional</label>
+                            <i class="fa fa-language" aria-hidden="true" style="color: white"></i>
+                            <input type="text" class="form-control" style="padding-top: 10px;" id="proLField" placeholder="Enter here">
+                    
+                        </div>   
+                    </div> 
+        
+            <!-- 6 grid column2 -->
+    
+            <div class="col-md-6">
+                
+                <h3 style="color : white">Professional Information</h3>
+        
+                <!-- job tittle -->
+                <div class="form-group ">
+                    <label for="jobtitleField">Job Title</label>
+                    <input class="form-control" id="jobtitleField" placeholder="Enter here"  >
+        
+                </div>  
+    
+                <!-- work exp -->
+                
+                <div class="form-group mt-2" id="workExp">
+                    <label for="weField"><i class="fa fa-briefcase" aria-hidden="true"></i>&nbsp; Work Experience</label>
+                    <textarea class="form-control weField" placeholder="Role at company" rows="2" ></textarea>
+                    <input class="form-control weFieldTIME mt-2"
+                    maxlength="20 type="text"  placeholder="TimePeriod"  >
+        
+        
+                </div>  
+                
+                <button class="btn-primary mt-2 btn-sm" id="weAdd-btn"> Add more </button>
+                <button class="btn-danger mt-2 btn-sm" id="weRem-btn"> Remove </button>
+    
+    
+                 <!-- Education -->
+                <div class="form-group mt-3" id="education">
+                    <label for="EdField"><i class="fa fa-graduation-cap" aria-hidden="true"></i>&nbsp; Education</label>
+                    <textarea class="form-control EdField" placeholder="Enter here"  rows="2" ></textarea>
+        
+                </div>
+                <button class="btn-primary mt-2 btn-sm mb-3" id="eduAddbtn"> Add more </button>
+                <button class="btn-danger mt-2 btn-sm" id="eduRem-btn"> Remove </button>
+    
+                
+                <!-- Projects -->
+                
+                <div class="form-group mt-2" id="projectUser">
+                    <label for=" projectFieldTittle"><i class="fa fa-archive" aria-hidden="true"></i>&nbsp; Projects</label>
+                    <input class="form-control projectFieldTittle"
+                     type="text" placeholder="Project tittle"  >
+                    <!-- <textarea class="form-control projectFieldDesc  mt-2" placeholder="short description" rows="2" ></textarea> -->
+        
+        
+                </div>  
+                
+                <button class="btn-primary mt-2 btn-sm" id="PAdd-btn"> Add more </button>
+                <button class="btn-danger mt-2 btn-sm" id="PRRem-btn"> Remove </button>
+    
+    
+    
+    
+                    <!-- Skills -->
+                
+                    <div class="form-group mt-3" id="skilltUser">
+                        <label for=" skillFieldTittle"><i class="fa fa-file-code-o" aria-hidden="true"></i>
+                            &nbsp; Skills</label>
+                        <input class="form-control skillFieldTittle"
+                         type="text" placeholder="Skill tittle"  >
+            
+                    </div>  
+                    
+                    <button class="btn-primary mt-2 btn-sm" id="skAdd-btn"> Add more </button>
+                    <button class="btn-danger mt-2 btn-sm" id="skRem-btn"> Remove </button>
+                
+    
+                
+                        <!-- Other interest -->
+                
+                        <h4 class="my-2 py-2" style="color: white;">Interests</h4>
+                
+                        <!-- 1-->
+    
+             
+                        <div class="form-group mt-2" id="interest">
+                            <label for="interestField">Add your interests</label>
+                            <textarea class="form-control interestField" placeholder="Enter here" rows="1" ></textarea>
+                
+                        </div>
+            
+                        <button class="btn-primary mt-2 btn-sm" id="ITAdd-btn"> Add more </button>
+                        <button class="btn-danger mt-2 btn-sm" id="ITRem-btn"> Remove </button>
+                
+            
+                  
+                
+            </div>
+        </div>
+            
+        <div class="container text-center mt-3 my-4">
+            <btn-primary class="btn btn-success btn-lg" onclick="GenerateCV()">Generate your CV</btn-primary>
+
+        </div>
+    
+    
+    
+        
+    
+    </div>
+    
+
+
+
+    <div id="temp">
+        <div class="container-fluid">
+            <div class="head-section">
+                <h1 id="Tname">Manoj Kumawat</h1>
+                <h3>Bachlor of technology</h3>
+                
+            </div>
+            <div class="personal-details">
+                <div class="row">
+                    <div class="col-md-5 mx-4 my-2">
+                        <span><i class="fa fa-envelope" style="margin-right: 10px;"></i><a id="emailT" href="mailto: Anyemail@email.com">abc@gmail.com</a></span>
+                    </div>
+                    <div class="col-md-5 mx-4 my-2">
+                        <span><i class="fa fa-phone" style="margin-right: 5px;"></i><a  id="mobileT" href="tel:0123 456 789"><span>+91 </span>0123 456 789</a></span>
+                    </div>
+                </div>
+        
+                <div class="row">
+                    <div class="col-md-5 mx-4 my-2">
+                        <span><i class="fa fa-home" style="margin-right: 5px;"></i><a id="emailT" href="mailto: Anyemail@email.com">bhomiya ji ki dhani pachar kalwar jaipur rajasthan</a></span>
+                    </div>
+                    <div class="col-md-5 mx-4 my-2">
+                        <span><i class="fa fa-github"style="margin-right: 5px;"></i><a id="gitIdT" href="#" target="_blank">github.com/username</a></span>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="acadmic-section">
+            <div class="container-fluid">
+                <div class="row mx-2">
+                    <div class="col-md-6 ">
+                        <h3><span><i class="fa-solid fa-book-open-reader"></i></span>Education</h3>
+                        <div class="row edu mx-4 my-3">
+                            
+                            <li>
+                                <strong><h4>Btech</h4></strong>
+                                <h6>NIT Jalandhar</h6>
+                                <h6>2018-2022</h6>
+                            </li>
+                            <li>
+                                <strong><h4>Btech</h4></strong>
+                                <h6>NIT Jalandhar</h6>
+                                <h6><i>2018-2022</i></h6>
+                            </li>
+                            <li>
+                                <strong><h4>Btech</h4></strong>
+                                <h6>NIT Jalandhar</h6>
+                                <h6>2018-2022</h6>
+                            </li>
+                        </div>
+                        <h3><span class="icon-holder"><i class="fa fa-language mr-2"></i></span>Languages</h3>
+                        <div class="row lang mx-4 my-3">
+                            
+                            <li>Hindi</li>
+                            <li>Punjabi</li>
+                        </div>
+                        <h3><span class="icon-holder"><i class="fa fa-info-circle mr-2"></i></span>Interests</h3>
+                        <div class="row mx-4 my-3">
+                            <span class="badge badge-secondary mr-2 mb-2"><h5>Music</h5></span>
+                            <span class="badge badge-secondary mr-2 mb-2"><h5>Cricket</h5></span>
+                            <span class="badge badge-secondary mr-2 mb-2"><h5>TT</h5></span>
+                            <span class="badge badge-secondary mr-2 mb-2"><h5>anaconda</h5></span>
+                        </div>
+                    </div>
+                    <div class="col-md-6">
+                        <h3><span class="icon-holder"><i class="fa fa-rocket mr-2"></i></span>Skills</h3>
+                        <div class="row mx-4 my-3">
+                            <span class="badge badge-secondary mr-2 mb-2"><h5>c++</h5></span>
+                            <span class="badge badge-secondary mr-2 mb-2"><h5>python</h5></span>
+                            <span class="badge badge-secondary mr-2 mb-2"><h5>javascript</h5></span>
+                            <span class="badge badge-secondary mr-2 mb-2"><h5>anaconda</h5></span>
+                            <span class="badge badge-secondary mr-2 mb-2"><h5>c++</h5></span>
+                            <span class="badge badge-secondary mr-2 mb-2"><h5>python</h5></span>
+                            <span class="badge badge-secondary mr-2 mb-2"><h5>javascript</h5></span>
+                            <span class="badge badge-secondary mr-2 mb-2"><h5>anaconda</h5></span>
+                            <span class="badge badge-secondary mr-2 mb-2"><h5>c++</h5></span>
+                            <span class="badge badge-secondary mr-2 mb-2"><h5>python</h5></span>
+                            <span class="badge badge-secondary mr-2 mb-2"><h5>javascript</h5></span>
+                            <span class="badge badge-secondary mr-2 mb-2"><h5>anaconda</h5></span>
+                            <span class="badge badge-secondary mr-2 mb-2"><h5>c++</h5></span>
+                            <span class="badge badge-secondary mr-2 mb-2"><h5>python</h5></span>
+                            <span class="badge badge-secondary mr-2 mb-2"><h5>javascript</h5></span>
+                            <span class="badge badge-secondary mr-2 mb-2"><h5>anaconda</h5></span>
+                        </div>
+                        <h3><span class="icon-holder"><i class="fa fa-archive mr-2"></i></span>Projects</h3>
+                        <div class="row mx-4 my-3">
+                            <li class="projects">
+                                <span class="title">Personal Assistant like JARVIS , SIRI</span>
+                                <p class="project-desc">a GUI based PA includes some ML models and python
+                                    Technologies ( Python /ML/ QTDesigner)</p>
+                            </li>
+                            <li class="projects">
+                                <span class="title">Personal Assistant like JARVIS , SIRI</span>
+                                <p class="project-desc">a GUI based PA includes some ML models and python
+                                    Technologies ( Python /ML/ QTDesigner)</p>
+                            </li>
+                            
+                        </div>
+
+                        
+                    </div>
+    
+                </div>
+
+                <div class="row text-center printbtn justify-content-center mb-4">
+                    <button class="btn btn-success mr-3" onclick="PrintCV()">Print CV </button>
+                    <button class="btn btn-success" onclick="EditBack()">Edit</button>
+                </div>
+            </div>
+
+        </div>
+            
+    </div>
+    
+   <script src="./js/temp2.js"></script>
+</body>
+</html>

@@ -1,0 +1,452 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Resume</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/css/bootstrap.min.css" integrity="sha384-TX8t27EcRE3e/ihU7zmQxVncDAy5uIKz4rEkgIXeMed4M0jlfIDPvg6uqKI2xXr2" crossorigin="anonymous">
+    
+    <style>
+        :root{
+            --bg-secondary:#6c757d;
+        }
+        body{
+            /* background-color: darkseagreen; */
+            background-color: #343F56;
+
+        }
+
+        label{
+            color: white;
+        }
+       #personalDetails{
+           height: 30vh;;
+       }
+       .left>li{
+           list-style: none;
+           height: 5vh;
+           margin:5px 0;
+       }
+
+       .left a{
+           text-decoration: none;
+           padding-left: 5px;
+           color: white;
+       }
+       .right{
+          text-align: right;
+          color: white;
+          padding: 5vh; 
+       }
+       #headings{
+           letter-spacing: 2px;
+           color: var(--bg-secondary);
+           font-weight: 700;
+
+       }
+       #headings::after{
+           content: "";
+           display: block;
+           border-bottom: 3px solid var(--bg-secondary);
+           width: 198vh;
+       }
+       
+
+       .skills{
+           margin: 0 auto;
+           max-width: 60%;
+           
+       }
+       
+       .eduright{
+          text-align: right; 
+       }
+       .eduleft{
+          font-weight: 1200;
+       }
+       #stream{
+           color: var(--bg-secondary);
+       }
+       li>span{
+           font-weight: bold;
+       }
+       #temp4{
+           display: none;
+       }
+
+       @media print{
+            body {
+                background: none;
+                background-color: none;
+            }
+
+            .container {
+
+                width: 6.5in;
+                height: 9in;
+                padding: 0;
+                margin: 0;
+            }
+            .printbtn{
+                display: none;
+            }
+
+            .badge-pill {
+                border: none !important;
+                box-shadow: none !important;
+                outline: none !important;
+            }
+    
+        }
+
+    </style>
+</head>
+<body>
+    <!-- Template Form -->
+    <div class="container" id="cv-form">
+        <h1 class="text-center my-2" style="color: white;">CVIC</h1>
+        <p class="text-center" style="color: white;">Create your own resume</p>
+    
+        <!-- Grid 12 -->
+        <div class="row">
+    
+            
+                    <div class="col-md-6">
+                    <!-- 6 grid  column1 -->
+            
+                        <h3 style="color: white; text-decoration: underline;">Personal Information </h3>
+                
+                        <div class="form-group mt-2">
+                            <label for="nameField">Your Name</label>
+                            <input type="text" class="form-control" id="nameField" placeholder="Enter here">
+                
+                        </div>
+                        <div class="form-group">
+                            <label for="emailField">Your Email</label>
+                            <input type="email" class="form-control" id="emailField" placeholder="Enter here">
+                
+                        </div>
+                        <div class="form-group mt-2">
+                            <label for="contactField">Contact No</label>
+                            <input type="number" class="form-control" id="contactField" placeholder="Enter here">
+                
+                        </div>
+                        <div class="form-group mt-2">
+                            <label for="addressField">Your Address</label>
+                            <textarea class="form-control mb-3" id="addressField" placeholder="Enter here"  ></textarea>
+                
+                        </div>
+
+                        <div class="form-group mt-1">
+                            <label for="Objective">Carrer Objective</label>
+                            <textarea class="form-control mb-3" id="Objective" placeholder="Enter here"></textarea>
+                
+                        </div>
+                                <!-- Education -->
+                        <div class="form-group mt-1" id="education">
+                            <label for="EdField"><i class="fa fa-graduation-cap" aria-hidden="true"></i>&nbsp; Education</label>
+                            
+                            <div id="edu">
+                                <input type="text" class="form-control my-2" id="stream" placeholder="Bachelor/Master of Tech">
+                                <input type="text" class="form-control my-2" id="school" placeholder="School/Institute Name">
+                                <div class=" ml-1" style="display: inline-flex;">
+                                    <span class="eduspan">From</span>
+                                    <input type="date" class="form-control mx-3" id="startdate">
+                                    <span class="eduspan">To</span>
+                                    <input type="date" class="form-control mx-3" id="enddate">
+                                </div>
+                                <input type="number" class="form-control my-2" id="score" placeholder="CGPA/Percentage">
+                                    
+                                  
+                            </div>
+                            
+                
+                        </div>
+                        <button class="btn-primary mt-2 btn-sm mb-3" id="eduAddbtn"> Add more </button>
+                        <button class="btn-danger mt-2 btn-sm" id="eduRem-btn"> Remove </button>
+            
+                
+                
+                        
+                
+                        <!-- Languages -->
+                    
+                        <h4 class="my-3 py-2" style="color: white;">Languages</h4>
+                    
+                        <!-- L1 -->
+                    
+                        
+                
+                        <!-- professional -->
+                        <div class="form-group">
+                    
+                            <label for="proLField">Professional/Native</label>
+                            <i class="fa fa-language" aria-hidden="true" style="color: white"></i>
+                            <input type="text" class="form-control" style="padding-top: 10px;" id="proLField" placeholder="Enter here">
+                    
+                        </div>   
+                    </div> 
+        
+            <!-- 6 grid column2 -->
+    
+            <div class="col-md-6">
+                
+                <h3 style="color : white;text-decoration: underline;">Professional Information</h3>
+        
+                <!-- job tittle -->
+                <!-- <div class="form-group ">
+                    <label for="jobtitleField">Job Title</label>
+                    <input class="form-control" id="jobtitleField" placeholder="Enter here"  >
+        
+                </div>   -->
+    
+                <!-- work exp -->
+                
+                <!-- <div class="form-group mt-2" id="workExp">
+                    <label for="weField"><i class="fa fa-briefcase" aria-hidden="true"></i>&nbsp; Work Experience</label>
+                    <textarea class="form-control weField" placeholder="Role at company" rows="2" ></textarea>
+                    <input class="form-control weFieldTIME mt-2"
+                    maxlength="20 type="text"  placeholder="TimePeriod"  >
+        
+        
+                </div>  
+                
+                <button class="btn-primary mt-2 btn-sm" id="weAdd-btn"> Add more </button>
+                <button class="btn-danger mt-2 btn-sm" id="weRem-btn"> Remove </button>
+     -->
+    
+                 
+                 <h4 class="my-3" style="color: white;">Social Links</h4>
+                
+                        <!-- github -->
+                    
+                        <div class="form-group">
+                
+                            <label for="gitField">Github</label>
+                            <i class="fa fa-github" aria-hidden="true" style="color: white"></i>
+                            <input type="text" class="form-control" id="gitField" placeholder="Enter here">
+                
+                        </div>
+                
+                        <!-- linkedin -->
+                        <div class="form-group my-2">     
+                                <label for="linkedinField">Linkedin </label>
+                                <i class="fa fa-linkedin" aria-hidden="true" style="background: #007bb5 ;padding: 5px;"></i>
+                            <input type="text" class="form-control" id="linkedinField" placeholder="Enter here">
+                
+                        </div>
+                
+                        <!-- portfolio -->
+                        <!--                 
+                        <div class="form-group my-2">
+                
+                                <label for="portfolioField">Portfolio </label>
+                                <i class="fa fa-rss" aria-hidden="true"></i>
+                            
+                            <input type="text" class="form-control" id="portfolioField" placeholder="Enter here">
+                
+                        </div> -->
+                
+                
+                <!-- Projects -->
+                
+                <div class="form-group mt-2" id="projectUser">
+                    <label for=" projectFieldTittle"><i class="fa fa-archive" aria-hidden="true"></i>&nbsp; Projects</label>
+                    <div id="pro">
+                        <input class="form-control projectFieldTittle" type="text" placeholder="Project tittle"  >
+                        <textarea class="form-control projectFieldDesc  my-2" placeholder="short description" rows="2" ></textarea>
+        
+                    </div>
+                        
+                    
+                    
+                    
+        
+                </div>  
+                
+                <button class="btn-primary mt-2 btn-sm" id="PAdd-btn"> Add more </button>
+                <button class="btn-danger mt-2 btn-sm" id="PRRem-btn"> Remove </button>
+    
+    
+    
+    
+                    <!-- Skills -->
+                
+                    <div class="form-group mt-3" id="skilltUser">
+                        <label for=" skillFieldTittle"><i class="fa fa-file-code-o" aria-hidden="true"></i>
+                            &nbsp; Skills</label>
+                        <input class="form-control skillFieldTittle mb-1"
+                         type="text" placeholder="Skill tittle"  >
+            
+                    </div>  
+                    
+                    <button class="btn-primary mt-2 btn-sm" id="skAdd-btn"> Add more </button>
+                    <button class="btn-danger mt-2 btn-sm" id="skRem-btn"> Remove </button>
+                
+    
+                
+                        <!-- Other interest -->
+                
+                        <h4 class="my-2 py-2" style="color: white;">Interests</h4>
+                
+                        <!-- 1-->
+    
+             
+                        <div class="form-group mt-2" id="interest">
+                            <label for="interestField">Add your interests</label>
+                            <textarea class="form-control interestField mb-1" placeholder="Enter here" rows="1" ></textarea>
+                
+                        </div>
+            
+                        <!-- <button class="btn-primary mt-2 btn-sm" id="ITAdd-btn"> Add more </button>
+                        <button class="btn-danger mt-2 btn-sm" id="ITRem-btn"> Remove </button>
+                
+             -->
+                  
+                
+            </div>
+        </div>
+            
+        <div class="container text-center mt-3 my-4">
+            <btn-primary class="btn btn-success btn-lg my-4" onclick="GenerateCV()">Generate your CV</btn-primary>
+
+        </div>
+    
+    
+    
+        
+    
+    </div>    
+
+
+
+     <!-- Template design -->
+
+    <div class="container-fluid" id="temp4">
+        <div class="row bg-secondary" id="personalDetails">
+            <div class="col-md-6  left">
+                <li><i class="fa fa-envelope" style="margin-right: 10px;"></i><a id="Temail" href="mailto: Anyemail@email.com">abc@gmail.com</a></li>
+                <li><i class="fa fa-phone" style="margin-right: 5px;"></i></i><a  id="Tmobile" href="tel:0123 456 789"><span>+91 </span>0123 456 789</a></li>
+                <li><i class="fa fa-github"style="margin-right: 5px;"></i><a id="Tgit" href="#" target="_blank">github.com/username</a></li>
+                <li><i class="fa fa-home" style="margin-right: 5px;"></i></i><a id="Taddress" href="#">bhomiya ji ki dhani pachar kalwar jaipur rajasthan</a></li>
+                <li><i class="fa fa-linkedin" style="margin-right: 5px;"></i></i><a id="Tlinkedn" href="#">Linkdin.com/username</a></li>
+            </div>
+            <div class="col-md-6 right">
+                
+                    <h1 id="Tname">Manoj Kumawat</h1>
+                    <h4 id="Tstream">Bachelor Of Technology</h4>
+                
+            </div>
+        </div>
+        <div class="row container-fluid mt-1">
+            <h5 id="headings">SUMMARY</h5>
+            <p id="summryDesc">Lorem ipsum, dolor sit amet consectetur adipisicing elit. Ex laudantium fugiat cupiditate, dicta est doloremque enim incidunt atque modi commodi consequatur accusamus facilis quisquam quis quos eaque repellat aliquid sit.</p>
+        </div>
+        <div class="row container-fluid mt-1">
+            <h5 id="headings">KEY SKILLS</h5>
+            <div class="skills" id="Tskill">
+                <span class="badge badge-secondary mr-2 mb-2"><h5>python</h5></span>
+                <span class="badge badge-secondary mr-2 mb-2"><h5>javascript</h5></span>
+                <span class="badge badge-secondary mr-2 mb-2"><h5>anaconda</h5></span>
+                <span class="badge badge-secondary mr-2 mb-2"><h5>c++</h5></span>
+                <span class="badge badge-secondary mr-2 mb-2"><h5>python</h5></span>
+                <span class="badge badge-secondary mr-2 mb-2"><h5>python</h5></span>
+                <span class="badge badge-secondary mr-2 mb-2"><h5>javascript</h5></span>
+                <span class="badge badge-secondary mr-2 mb-2"><h5>anaconda</h5></span>
+                <span class="badge badge-secondary mr-2 mb-2"><h5>c++</h5></span>
+                <span class="badge badge-secondary mr-2 mb-2"><h5>python</h5></span>
+                <span class="badge badge-secondary mr-2 mb-2"><h5>python</h5></span>
+                <span class="badge badge-secondary mr-2 mb-2"><h5>javascript</h5></span>
+                <span class="badge badge-secondary mr-2 mb-2"><h5>anaconda</h5></span>
+                <span class="badge badge-secondary mr-2 mb-2"><h5>c++</h5></span>
+                <span class="badge badge-secondary mr-2 mb-2"><h5>python</h5></span>
+                <span class="badge badge-secondary mr-2 mb-2"><h5>python</h5></span>
+                
+            </div>
+
+        </div>
+
+        <div class="row container-fluid mt-1" id="Tedu1">
+            <h5 id="headings">EDUCATION</h5>
+            <li class="row w-100">
+                <div class="eduleft br-primary col-md-4">
+                    <h5 id="stream">Bachelor of Technology</h5>
+                    <h5>Dr B R Ambedkar National Institute of Technology Jalandhar</h5>
+                    
+                </div>
+                <div class="eduright br-secondary col-md-8">
+                    <h6>2018-2022</h6>
+                    <h6>7.63</h6>
+                    
+                </div>
+            </li>
+            <li class="row w-100">
+                <div class="eduleft br-primary col-md-4">
+                    <h5 id="stream">Bachelor of Technology</h5>
+                    <h5>Dr B R Ambedkar National Institute of Technology Jalandhar</h5>
+                    
+                </div>
+                <div class="eduright br-secondary col-md-8">
+                    <h6>2018-2022</h6>
+                    <h6>7.63</h6>
+                    
+                </div>
+            </li>
+            <li class="row w-100">
+                <div class="eduleft br-primary col-md-4">
+                    <h5 id="stream">Bachelor of Technology</h5>
+                    <h5>Dr B R Ambedkar National Institute of Technology Jalandhar</h5>
+                    
+                </div>
+                <div class="eduright br-secondary col-md-8">
+                    <h6>2018-2022</h6>
+                    <h6>7.63</h6>
+                    
+                </div>
+            </li>
+        </div>
+        <div class="row container-fluid mt-1">
+            <h5 id="headings">PROJECTS</h5>
+            <div class="projects" id="Tproject">
+                <li>
+                    <span id="protitle">Namaste</span>
+                    <p id="prodesc">Lorem ipsum dolor sit, amet consectetur adipisicing elit. Facere inventore veritatis dolor autem unde ab sint tenetur excepturi optio iste illo, dolorem nulla laborum sunt perferendis placeat tempora quae alias!</p>
+                </li>
+                <li>
+                    <span id="protitle">Prayass</span>
+                    <p id="prodesc">Lorem ipsum dolor sit, amet consectetur adipisicing elit. Provident quisquam quibusdam vero iusto repellendus dolores animi eligendi cumque, facilis, dolor sapiente odit quia expedita ab eum possimus quidem alias quis?</p>
+                </li>
+            </div>
+
+        </div>
+
+        <div class="row container-fluid mt-1">
+            <h5 id="headings">ADDITIONAL INFORMATION</h5>
+            <div class="interests">
+                <li id="language">
+                    <span>Languages-</span>Hindi,English,Punjabi  
+                </li>
+                <li id="hobbies">
+                    <span>Interests-</span>Singing,Cricket
+                </li>
+                
+            </div>
+
+        </div>
+        <div class="row text-center printbtn justify-content-center mb-4">
+            <button class="btn btn-success mr-3" onclick="PrintCV()">Print CV </button>
+            <button class="btn btn-success" onclick="EditBack()">Edit</button>
+        </div>
+    </div>
+
+
+
+
+
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <script src="./js/temp4.js">
+</body>
+</html>
